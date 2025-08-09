@@ -1,0 +1,90 @@
+body{
+  background-color: #FAFAF8;
+  margin: 3px;
+  font-family: Inter, sans-serif;
+}
+/* Header.jsx */
+header img{
+  margin-right: 11px;
+  width: 50px;
+}
+header{
+  display: flex;
+  border: 2px ridge;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 8px;
+}
+header > h1{
+  font-weight: 400;
+  color: rgb(46, 46, 46);
+}
+
+/* MainContent.jsx */
+.add-ingredient-form{
+  padding-top: 30px;
+  gap:11px;
+  display: flex;
+  justify-content: center;
+  min-height:50px;
+}
+button{
+  width: 200px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #D1D5D8;
+  font-family: Inter;
+  background-color: #141413;
+  color:#FAFAF8;
+  text-align: center;
+}
+#ing-name{
+  font-size: 1rem;
+}
+.add-ingredient-form > input{
+  border-radius: 4px;
+  border: 1px solid #D1D5D8;
+  flex-grow: 1;
+  max-width: 550px;
+}
+.add-ingredient-form > button::before{
+  content: "+";
+  margin-right: 7px;
+}
+.list-item{
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+section{
+  padding-left:25px;
+}
+.get-recipe{
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 4px 4px rgb(179, 179, 179);
+  background-color: #efefef;
+  width: 550px;
+}
+.get-recipe > h4{
+  padding-left: 35px;
+}
+.get-recipe-text{
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+#get-recipe-btn{
+  width: 120px;
+  height: 35px;
+  border-radius: 7px;
+  background-color: rgb(222, 103, 60);
+}
+#get-recipe-btn:hover{
+  transform: scale(1.1);
+}
+#get-recipe-btn:active{
+  transform: translateX(2px);
+  background-color: orangered;
+}
