@@ -1,5 +1,8 @@
 # Chef-Claude — AI-Powered Recipe Generator
 
+Deplyed using Render: https://chef-claude-btmv.onrender.com/
+---
+
 Generate personalized recipes using the ingredients you have, powered by Mistral AI from Hugging Face.
 Built with **React + Vite** on the frontend and **Express** on the backend for secure API handling.
 
