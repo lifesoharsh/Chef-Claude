@@ -1,7 +1,7 @@
 export async function getRecipeFromMistral(ingredientsArr) {
     const ingredientsString = ingredientsArr.join(", ")
     try {
-        const generatedRecipeMarkdown = await fetch("http://localhost:3000/api/recipe", {
+        const generatedRecipeMarkdown = await fetch("/api/recipe", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ ingredients: ingredientsArr })
