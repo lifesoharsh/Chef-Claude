@@ -1,7 +1,13 @@
 import express from "express"
 import cors from "cors"
 import dotenv from "dotenv"
+import path from "path"
+import { fileURLToPath } from "url"
 import { HfInference } from "@huggingface/inference"
+
+// For ES modules __dirname equivalent
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
 dotenv.config()
 
@@ -15,6 +21,7 @@ const SYSTEM_PROMPT = `
 You are an assistant that receives a list of ingredients that a user has and suggests a recipe they could make with some or all of those ingredients. You don't need to use every ingredient they mention in your recipe. The recipe can include additional ingredients they didn't mention, but try not to include too many extra ingredients. Try to smoothen the recommendation. Format your response in markdown to make it easier to render to a web page
 `
 
+// API routes FIRST
 app.post("/api/recipe", async (req, res) => {
     const { ingredients } = req.body
 
@@ -37,5 +44,14 @@ app.post("/api/recipe", async (req, res) => {
         res.status(500).json({ error: err.message })
     }
 })
+
+// Serve static files from React build
+app.use(express.static(path.join(__dirname, '..', 'dist')))
+
+// Simple catch-all for React routing
+app.use((req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'dist', 'index.html'))
+})
+
 const PORT = process.env.PORT || 3000
 app.listen(PORT, () => console.log(`✅ Backend running on port ${PORT}`))
