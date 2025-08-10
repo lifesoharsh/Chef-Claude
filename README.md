@@ -102,6 +102,3 @@ Pull requests and suggestions are welcome!
 If you find a bug or have an improvement idea, open an issue.
 
 ---
-
-If you want, I can also **add screenshots** and a **project architecture diagram** to make it look even more professional for GitHub recruiters.
-Do you want me to make that next?
